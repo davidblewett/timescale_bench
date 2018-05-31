@@ -17,6 +17,10 @@ timescale_bench
 
 
 CLI for benchmarking SELECT query performance against a TimescaleDB instance.
+Example:
+
+  export DSN=postgresql://postgres@localhost/homework
+  timescale_bench -f /path/to/query_params.csv
 
 
 * Free software: Apache Software License 2.0
