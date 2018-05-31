@@ -17,20 +17,37 @@ timescale_bench
 
 
 CLI for benchmarking SELECT query performance against a TimescaleDB instance.
-Example:
+Example::
 
-  export DSN=postgresql://postgres@localhost/homework
-  timescale_bench -f /path/to/query_params.csv
+    pip install -e git+https://github.com/davidblewett/timescale_bench.git#egg=timescale_bench
+    export DSN=postgresql://postgres@localhost/homework
+    timescale_bench -f /path/to/query_params.csv
 
 
 * Free software: Apache Software License 2.0
-* Documentation: https://timescale-bench.readthedocs.io.
 
 
 Features
 --------
 
-* TODO
+* Input is a CSV file (either stdin or path on disk) with the following structure:
+
+  * `hostname,start_time,end_time`
+
+* Database connection details passed via connection string:
+
+  * https://www.postgresql.org/docs/current/static/libpq-connect.html#LIBPQ-CONNSTRING
+
+* Optionally output host per-minute min/max CPU usage
+* Output Summary
+
+  * # of queries processed
+  * total processing time across all queries
+  * the minimum query time (for a single query)
+  * the median query time
+  * the average query time
+  * and the maximum query time.
+
 
 Credits
 -------
